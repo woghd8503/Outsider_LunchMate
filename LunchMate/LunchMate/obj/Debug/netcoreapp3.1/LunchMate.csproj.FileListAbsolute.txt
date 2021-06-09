@@ -1,0 +1,13 @@
+D:\_01_CSharp\TeamProject_Network_DataBase\LunchMate\LunchMate\bin\Debug\netcoreapp3.1\LunchMate.exe
+D:\_01_CSharp\TeamProject_Network_DataBase\LunchMate\LunchMate\bin\Debug\netcoreapp3.1\LunchMate.deps.json
+D:\_01_CSharp\TeamProject_Network_DataBase\LunchMate\LunchMate\bin\Debug\netcoreapp3.1\LunchMate.runtimeconfig.json
+D:\_01_CSharp\TeamProject_Network_DataBase\LunchMate\LunchMate\bin\Debug\netcoreapp3.1\LunchMate.runtimeconfig.dev.json
+D:\_01_CSharp\TeamProject_Network_DataBase\LunchMate\LunchMate\bin\Debug\netcoreapp3.1\LunchMate.dll
+D:\_01_CSharp\TeamProject_Network_DataBase\LunchMate\LunchMate\bin\Debug\netcoreapp3.1\LunchMate.pdb
+D:\_01_CSharp\TeamProject_Network_DataBase\LunchMate\LunchMate\obj\Debug\netcoreapp3.1\LunchMate.csprojAssemblyReference.cache
+D:\_01_CSharp\TeamProject_Network_DataBase\LunchMate\LunchMate\obj\Debug\netcoreapp3.1\LunchMate.AssemblyInfoInputs.cache
+D:\_01_CSharp\TeamProject_Network_DataBase\LunchMate\LunchMate\obj\Debug\netcoreapp3.1\LunchMate.AssemblyInfo.cs
+D:\_01_CSharp\TeamProject_Network_DataBase\LunchMate\LunchMate\obj\Debug\netcoreapp3.1\LunchMate.csproj.CoreCompileInputs.cache
+D:\_01_CSharp\TeamProject_Network_DataBase\LunchMate\LunchMate\obj\Debug\netcoreapp3.1\LunchMate.dll
+D:\_01_CSharp\TeamProject_Network_DataBase\LunchMate\LunchMate\obj\Debug\netcoreapp3.1\LunchMate.pdb
+D:\_01_CSharp\TeamProject_Network_DataBase\LunchMate\LunchMate\obj\Debug\netcoreapp3.1\LunchMate.genruntimeconfig.cache
