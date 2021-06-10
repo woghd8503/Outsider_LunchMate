@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LunchMate
 {
-    class Wits_Game : Game
+    class Wits_Game 
     {
         public void gameExit()
         {
