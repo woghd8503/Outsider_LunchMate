@@ -8,6 +8,7 @@ namespace LunchMate
     {
         public const int ROCKSCISSORSPAPER = 1;
         public const int DRAWLOT = 2;
+        public const int MEMORYGAME = 3;
         static void Main(string[] args)
         {
             Menu();
@@ -17,7 +18,7 @@ namespace LunchMate
         {
             RockScissorsPaper rsp = new RockScissorsPaper();
             DrawLot drawLot = new DrawLot();
-
+            MakeAPair map = new MakeAPair();
             bool isRun = true;
             
 
@@ -33,6 +34,9 @@ namespace LunchMate
                     case DRAWLOT:
                         drawLot.Manager();
                         break;
+                    case MEMORYGAME:
+                        map.MemoryGame();
+                        break;
                     default:
                         Console.WriteLine("잘못 입력하셨습니다.");
                         break;
@@ -47,6 +51,7 @@ namespace LunchMate
             Console.WriteLine("-----------");
             Console.WriteLine("1. 가위 바위 보");
             Console.WriteLine("2. 제비뽑기");
+            Console.WriteLine("3. 짝맞추기");
             Console.Write("입력:");
 
         }
