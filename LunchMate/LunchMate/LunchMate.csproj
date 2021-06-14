@@ -5,4 +5,16 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Game_Scripts\_2_DrawLot.cs" />
+    <Compile Remove="Game_Scripts\_3_MakeAPair.cs" />
+    <Compile Remove="Game_Scripts\_4_Wits_Game.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Game_Scripts\_2_DrawLot.cs" />
+    <None Include="Game_Scripts\_3_MakeAPair.cs" />
+    <None Include="Game_Scripts\_4_Wits_Game.cs" />
+  </ItemGroup>
+
 </Project>

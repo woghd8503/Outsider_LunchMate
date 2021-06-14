@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LunchMate
+namespace LunchMate 
 {
-    class Selecet //좌표  const
+    class Selecet  // 좌표  const
     {
         public const string LOCATION1 = "1";
         public const string LOCATION2 = "2";
@@ -26,12 +26,50 @@ namespace LunchMate
         public const string LOCATION15 = "15";
         public const string LOCATION16 = "16";
     }
-    class MakeAPair
+    class _3_MakeAPair : IGameBox
     {
         int[,] gameboard = new int[4, 4];
         int[,] defaultBoard = new int[4, 4];
+        public string sel1 { get; set; }
         public List<int> board1 = new List<int>();
         public List<int> board2 = new List<int>();
+
+        public int[] num1 = new int[2], num2 = new int[2];
+
+        public void ShowMenu()
+        {
+            bool isRun = true;
+
+            while (isRun)
+            {
+                Console.Clear();
+                Console.WriteLine("1. 게임시작");
+                Console.WriteLine("2. 게임설명");
+                Console.WriteLine("3. 돌아가기");
+                int sel = Int32.Parse(Console.ReadLine());
+
+                if (sel == 1)
+                {
+                    Console.Clear();
+                    PlayGame();
+                }
+                else if (sel == 2)
+                {
+                    Console.Clear();
+                    ExplainGame();
+                }
+                else if (sel == 3)
+                {
+                    Console.Clear();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("잘못입력하셧습니다.");
+                    Console.Clear();
+                }
+            }
+        }
 
         public void makeBoard() //1~8의 수를 각 리스트에 넣어준다
         {
@@ -110,9 +148,43 @@ namespace LunchMate
                 Console.WriteLine();
             }
         }
-        public void game() //게임 시작
+        public void PlayGame()
         {
+            makeBoard();
+            shuffleBoard();
+            JudgeGame();
+            SendPacket();
+            RecieveResult();
+        }
+        public void ExplainGame()
+        {
+            Console.WriteLine("====================================");
+            Console.WriteLine("1. 숫자를 기억 ");
+            Console.WriteLine("2. 짝을 맞추기 위해 2개의 숫자를 입력 ");
+            Console.WriteLine("3. 게임이 끝난 후 서버에서 등수를 매김");
+            Console.ReadKey();
+        }
 
+        public void InputGame()
+        {
+            Console.Write("1) 1~16 입력(0은 종료)>>");//1~16입력 스위치문 가려줄 판이 0일때만 가려줄 판의 수를 게임판의 수로 바꿔준다
+            sel1 = Console.ReadLine();
+        }
+
+        public object SendPacket()
+        {
+            int input = 0;
+            for (int i = 0; i < num1.Length; i++)
+            {
+                
+            }
+
+
+            return input;
+        }
+
+        public void JudgeGame()
+        {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start(); // 스톱워치 시작
             bool isRun = true;
@@ -122,9 +194,7 @@ namespace LunchMate
                 testBoard();
                 System.Threading.Thread.Sleep(2000); //2초간 게임판을 보여주고 가린다.
                 drawDefault();                      //가려줄 판을 그려준다.
-                int[] num1 = new int[2], num2 = new int[2];
-                Console.Write("1) 1~16 입력(0은 종료)>>");//1~16입력 스위치문 가려줄 판이 0일때만 가려줄 판의 수를 게임판의 수로 바꿔준다
-                string sel1 = Console.ReadLine();
+                InputGame();
                 switch (sel1)
                 {
                     case Selecet.LOCATION1:
@@ -383,11 +453,14 @@ namespace LunchMate
                 }
             }
         }
-        public void MemoryGame()
+        public void RecieveResult()
         {
-            makeBoard();
-            shuffleBoard();
-            game();
+
+        }
+        public void ClearScreen()
+        {
+            Console.Clear();
+            Console.ReadKey();
         }
     }
 }

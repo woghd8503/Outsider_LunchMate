@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LunchMate
 {
-    class DrawLot
+    class _2_DrawLot : IGameBox
     {
         public int participantNum { get; set; }
         int loserNum { get; set; }
@@ -30,11 +30,72 @@ namespace LunchMate
             string decision = Console.ReadLine();
 
             if (decision == "y" || decision == "Y")
-                Play();
+                PlayGame();
             else if (decision == "n" || decision == "N")
                 return;
         }
-        public void Play()
+
+        public void ShowMenu()
+        {
+            bool isRun = true;
+            while (isRun)
+            {
+                Console.Clear();
+                Console.WriteLine("1. 게임시작");
+                Console.WriteLine("2. 게임설명");
+                Console.WriteLine("3. 돌아가기");
+                int sel = Int32.Parse(Console.ReadLine());
+
+                if (sel == 1)
+                {
+                    Console.Clear();
+                    PlayGame();
+                }
+                else if (sel == 2)
+                {
+                    Console.Clear();
+                    ExplainGame();
+                }
+                else if (sel == 3)
+                {
+                    Console.Clear();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("잘못입력하셧습니다.");
+                    Console.Clear();
+                }
+            }
+        }
+        public void PlayGame()
+        {
+            InputGame();
+            SendPacket();
+        }
+        public void ExplainGame()
+        {
+            Console.WriteLine("====================================");
+            Console.WriteLine("1. 접속 시 자동으로 번호를 지정 ");
+            Console.WriteLine("2. 방장이 벌칙자의 수를 입력 ");
+            Console.WriteLine("3. 지정된 번호를 기반으로 제비뽑기 결과를 받음");
+            Console.ReadKey();
+        }
+        public void InputGame()
+        {
+            int captain = 0;
+            if(captain == 0)
+            Console.WriteLine("1. 벌칙자의 수를 입력");
+            this.loserNum= Int32.Parse(Console.ReadLine());
+        }
+        public object SendPacket()
+        {
+            // 사용자의 입력값을 서버로 보냄
+            Console.WriteLine($"사용자가 입력한 값은: {this.loserNum}");
+            Console.ReadKey();
+            return loserNum;
+        }
+        public void JudgeGame()
         {
             bool isSame;
             Random r = new Random();
@@ -68,14 +129,11 @@ namespace LunchMate
             }
             Console.Write("입니다.");
         }
-        public void Manager()
+
+        public void ClearScreen()
         {
-            while (true)
-            {
-                Console.ReadLine();
-                Console.Clear();
-                Intro();
-            }
+            Console.Clear();
+            Console.ReadLine();
         }
     }
 }
